@@ -103,7 +103,8 @@ void main () {
     float ry = abs(uv.y) - (0.5 - edge);
     float mx = step(0.5 - edge, abs(uv.x));
     float my = step(0.5 - edge, abs(uv.y));
-    float a = 1.0 - mx * my  * step(edge, length(vec2(rx, ry)));
+    float radius = length(vec2(rx, ry));
+    float a = 1.0 - mx * my * step(edge, radius) * smoothstep(0., edge * 0.01, radius - edge);
     gl_FragColor = vec4(color.rgb, color.a * a);
 }
 
