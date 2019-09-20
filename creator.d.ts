@@ -7624,7 +7624,7 @@ declare namespace cc {
 		!#zh 根据指定索引获取材质
 		@param index index
 		*/
-		getMaterial(index: number): void;
+		getMaterial(index: number): Material;
 		/**
 		!#en Set the material by index.
 		!#zh 根据指定索引设置材质

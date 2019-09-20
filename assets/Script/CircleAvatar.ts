@@ -16,8 +16,10 @@ export default class CircleAvatar extends cc.Component {
         this.time += dt;
         const edge = Math.abs(Math.sin(this.time)) / 2;
         const sprite = this.node.getComponent(cc.Sprite);
-        const material = sprite.sharedMaterials[0];
-        material.setProperty("u_edge", edge);
-        sprite.setMaterial(0, material);
+        const material = sprite.getMaterial(0);
+        if (material) {
+            material.setProperty("u_edge", edge);
+            sprite.setMaterial(0, material);
+        }
     }
 }
