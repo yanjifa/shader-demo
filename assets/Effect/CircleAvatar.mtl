@@ -4,12 +4,12 @@
   "_objFlags": 0,
   "_native": "",
   "_effectAsset": {
-    "__uuid__": "59b93610-4778-412f-baae-1c085030ef46"
+    "__uuid__": "bdfafdd7-2814-43f0-918c-ca06cc6630fb"
   },
   "_defines": {
     "USE_TEXTURE": true
   },
   "_props": {
-    "u_edge": 0.15
+    "u_edge": 0.5
   }
 }
