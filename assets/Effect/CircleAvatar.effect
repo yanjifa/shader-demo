@@ -13,6 +13,13 @@ CCEffect %{
       properties:
         texture: { value: white }
         alphaThreshold: { value: 0.5 }
+        edge: {
+          value: 0.15,
+          inspector: {
+            tooltip: "圆角范围",
+            range: [0.0, 0.5]
+          }
+        }
 }%
 
 
@@ -58,14 +65,14 @@ CCProgram fs %{
 
   in vec4 v_color;
 
+  uniform Props {
+    float edge;
+  };
+
   #if USE_TEXTURE
   in vec2 v_uv0;
   uniform sampler2D texture;
   #endif
-
-  uniform Float {
-    float u_edge;
-  }
 
   void main () {
     vec4 o = vec4(1, 1, 1, 1);
@@ -81,7 +88,6 @@ CCProgram fs %{
 
     ALPHA_TEST(o);
 
-    float edge = u_edge;
     vec2 uv = v_uv0.xy - vec2(0.5, 0.5);
     float rx = abs(uv.x) - (0.5 - edge);
     float ry = abs(uv.y) - (0.5 - edge);

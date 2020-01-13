@@ -1,12 +1,14 @@
 {
-  "ver": "2.3.3",
+  "ver": "2.3.4",
   "uuid": "87dc032b-81b0-4046-839c-530f07000a24",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
   "premultiplyAlpha": false,
   "genMipmaps": false,
-  "packable": true,
+  "packable": false,
+  "width": 150,
+  "height": 150,
   "platformSettings": {},
   "subMetas": {
     "avatar": {
